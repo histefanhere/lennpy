@@ -4,10 +4,14 @@
 import random
 import sys
 
-class _Lenny:
+class Lenny:
     def __init__(self):
         self.basic = "( ͡° ͜ʖ ͡°)"
         self.table_flip = "(╯°□°)╯︵ ┻━┻"
+        self.sad = "( ͡° ʖ̯ ͡°)"
+        self.angry = "( ͡ಠ ʖ̯ ͡ಠ)"
+        self.magic = "( ͡° ͜ʖ ͡°)━☆ﾟ.*･｡ﾟ"
+        self.happy = "☜(⌒▽⌒)☞"
 
     def __str__(self):
         return self.basic
@@ -15,7 +19,7 @@ class _Lenny:
     def __repr__(self):
         return self.basic
 
-Lenny = _Lenny()
+lenny = Lenny()
 
 
 lennys = {

@@ -22,7 +22,7 @@ If you just want the standard lenny faces, lennpy provides `lennpy.lenny` which 
 '(╯°□°)╯︵ ┻━┻'
 ```
 
-But lennpy also organizes lenny faces by categories, _emotions,_ which from you can get a random face in various ways:
+But lennpy also organizes lenny faces by categories, _emotions,_ from which you can get a random face in various ways:
 
 ```py
 >>> import lennpy as le
