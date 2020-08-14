@@ -2,7 +2,7 @@
 
 Python Package for accessing [Lenny faces](https://knowyourmeme.com/memes/%CD%A1-%CD%9C%CA%96-%CD%A1-lenny-face)
 
-One day I woke up and decided that I needed lenny faces in my projects, but I was dissapointed when I found the lack of categorized and easily accessable lenny faces in Python. So I made this.
+One day I woke up and decided that I needed lenny faces in my projects, but I was disappointed when I found the lack of categorized and easily accessable lenny faces in Python. So I made this.
 
 ## Installation
 
