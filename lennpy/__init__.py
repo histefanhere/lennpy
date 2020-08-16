@@ -4,23 +4,6 @@
 import random
 import sys
 
-class Lenny:
-    def __init__(self):
-        self.basic = "( ͡° ͜ʖ ͡°)"
-        self.table_flip = "(╯°□°)╯︵ ┻━┻"
-        self.sad = "( ͡° ʖ̯ ͡°)"
-        self.angry = "( ͡ಠ ʖ̯ ͡ಠ)"
-        self.magic = "( ͡° ͜ʖ ͡°)━☆ﾟ.*･｡ﾟ"
-        self.happy = "☜(⌒▽⌒)☞"
-
-    def __str__(self):
-        return self.basic
-    
-    def __repr__(self):
-        return self.basic
-
-lenny = Lenny()
-
 
 lennys = {
     "basic": [
@@ -31,7 +14,6 @@ lennys = {
         "(⟃ ͜ʖ ⟄) ",
         "( ‾ ʖ̫ ‾)",
         "(͠≖ ͜ʖ͠≖)",
-        "( ͡° ʖ̯ ͡°)",
         "ʕ ͡° ʖ̯ ͡°ʔ",
         "( ͡° ل͜ ͡°)",
         "( ͠° ͟ʖ ͡°)",
@@ -46,6 +28,7 @@ lennys = {
         "( ͡° ͜ʖ ͡ °)"
     ],
     "table_flip": [
+        "(╯°□°)╯︵ ┻━┻",
         "(╯ຈل͜ຈ) ╯︵ ┻━┻",
         "(ノ͡° ͜ʖ ͡°)ノ︵┻┻",
         "(⌐▀͡ ̯ʖ▀) ╯︵ ┻─┻",
@@ -66,10 +49,45 @@ lennys = {
         "┻━┻ ︵﻿ ¯\_( ͡° ͜ʖ ͡°)_/¯ ︵ ┻━┻",
         "/╲/( ͜。 ͜。 ͡ ͡ʖ ͜。 ͜。)/\╱\︵└(՞▃՞ └)",
         "!!!（╯°□°）╯ミ /╲/( ͜。 ͜。 ͡ʖ ͜。 ͜。)/\╱\""
+    ],
+    "sad": [
+        "( ͡° ʖ̯ ͡°)"
+    ],
+    "angry": [
+        "( ͡ಠ ʖ̯ ͡ಠ)"
+    ],
+    "magic": [
+        "( ͡° ͜ʖ ͡°)━☆ﾟ.*･｡ﾟ"
+    ],
+    "happy": [
+        "☜(⌒▽⌒)☞"
     ]
-
 }
 
+
+# This class lets us make the easiest interface possible for the package
+class Emotion:
+    def __init__(self, name):
+        self.name = name
+
+    def __repr__(self):
+        """Called when an attribute of the module is gotten
+        E.G. `lennpy.basic` will return the first basic lenny via this method."""
+        return lennys[self.name][0]
+
+    def __call__(self, *args):
+        """Called when an attribute of the module is called
+        E.G. `lenny.basic()` will return a random basic lenny via this method."""
+        return random.choice(lennys[self.name])
+
+# And now create all the "fake" module attributes
+module = sys.modules[__name__]
+for emotion_name in lennys.keys():
+    setattr(module, emotion_name, Emotion(emotion_name))
+
+
+# Programmatic interface for getting the available emotions and a specific lenny via function calls
+# A.K.A. lame and so 2015.
 class InvalidEmotion(Exception):
     def __init__(self, emotion):
         super().__init__(f"{emotion} is not a valid emotion")
@@ -77,13 +95,14 @@ class InvalidEmotion(Exception):
 def emotions():
     return list(lennys.keys())
 
-def get(emotion: str):
-    if emotion not in lennys:
+def get(emotion):
+    if emotion not in lennys.keys():
+        raise InvalidEmotion(emotion)
+    return lennys[emotion][0]
+
+def get_random(emotion):
+    if emotion not in lennys.keys():
         raise InvalidEmotion(emotion)
     return random.choice(lennys[emotion])
 
-# Here we're dynamically generating the module methods from the keys of the main dict
-# e.g lennpy.get_basic() will return a random basic lenny
-module = sys.modules[__name__]
-for key in lennys.keys():
-    setattr(module, "get_" + key, lambda: get(key))
+print(lennys)

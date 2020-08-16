@@ -1,4 +1,4 @@
-# lennpy
+# lennpy ( ͡° ͜ʖ ͡°)
 
 Python Package for accessing [Lenny faces](https://knowyourmeme.com/memes/%CD%A1-%CD%9C%CA%96-%CD%A1-lenny-face)
 
@@ -12,24 +12,42 @@ python3 -m pip install lennpy
 
 ## Usage
 
-If you just want the standard lenny faces, lennpy provides `lennpy.lenny` which holds the popular lenny face, among others:
+lennpy organizes lenny faces by categories, _emotions,_ which from you can get the most popular standard representation very simply and elegantly:
 
 ```py
 >>> import lennpy as le
->>> le.lenny
+>>> le.basic
 '( ͡° ͜ʖ ͡°)'
->>> le.lenny.table_flip
+>>> le.table_flip
 '(╯°□°)╯︵ ┻━┻'
+>>> le.happy
+'☜(⌒▽⌒)☞'
 ```
 
-But lennpy also organizes lenny faces by categories, _emotions,_ from which you can get a random face in various ways:
+But don't want the same old face every time? Don't worry, lennpy has you covered! You can also call any of these emotions as if they were methods to get a randomzied lenny from a large pool of faces:
 
 ```py
 >>> import lennpy as le
->>> le.get_basic()
-'( ͡° ͜ʖ ͡°)'
+>>> le.basic()
+'( ͡◉ ͜ʖ ͡◉)'
+>>> le.basic()
+'( ͡° ل͜ ͡°)'
+>>> le.table_flip()
+'（╯ ͡° ل͜ ͡°）╯︵ ( ͜。 ͡ʖ ͜。)'
+>>> le.table_flip()
+'┻━┻ ︵﻿ ¯\_( ͡° ͜ʖ ͡°)_/¯ ︵ ┻━┻'
+```
+
+And if it's needed you can also access the available emotions and retrive faces programmatically (but lets be honest here, this is boring):
+
+```py
+>>> import lennpy as le
 >>> le.emotions()
 ['basic', 'table_flip', ...]
 >>> le.get('basic')
-'( ͡ᵔ ͜ʖ ͡ᵔ )'
+'( ͡° ͜ʖ ͡°)'
+>>> le.get('basic')
+'( ͡° ͜ʖ ͡°)'
+>>> le.get_random('basic')
+'(͠≖ ͜ʖ͠≖)'
 ```
