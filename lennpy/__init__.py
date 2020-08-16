@@ -61,6 +61,9 @@ lennys = {
     ],
     "happy": [
         "☜(⌒▽⌒)☞"
+    ],
+    "shrug": [
+        "¯\_(ツ)_/¯"
     ]
 }
 
@@ -104,5 +107,3 @@ def get_random(emotion):
     if emotion not in lennys.keys():
         raise InvalidEmotion(emotion)
     return random.choice(lennys[emotion])
-
-print(lennys)

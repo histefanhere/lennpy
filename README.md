@@ -1,6 +1,6 @@
 # lennpy ( ͡° ͜ʖ ͡°)
 
-Python Package for accessing [Lenny faces](https://knowyourmeme.com/memes/%CD%A1-%CD%9C%CA%96-%CD%A1-lenny-face)
+Python Package for accessing [Lenny faces](https://knowyourmeme.com/memes/%CD%A1-%CD%9C%CA%96-%CD%A1-lenny-face) ( ͡ᵔ ͜ʖ ͡ᵔ )
 
 One day I woke up and decided that I needed lenny faces in my projects, but I was disappointed when I found the lack of categorized and easily accessable lenny faces in Python. So I made this.
 
@@ -51,3 +51,6 @@ And if it's needed you can also access the available emotions and retrive faces 
 >>> le.get_random('basic')
 '(͠≖ ͜ʖ͠≖)'
 ```
+
+
+┬┴┬┴┤ ͜ʖ ͡°) ├┬┴┬┴
