@@ -5,7 +5,7 @@ with open("README.md", "r", encoding='utf-8') as fh:
 
 setuptools.setup(
     name="lennpy",
-    version="0.0.6",
+    version="0.0.7",
     author="Stefan Zdravkovic",
     author_email="stefan.zdra@gmail.com",
     description="Generate Lenny Faces",
