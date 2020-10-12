@@ -5,7 +5,7 @@ with open("README.md", "r", encoding='utf-8') as fh:
 
 setuptools.setup(
     name="lennpy",
-    version="0.0.7",
+    version="0.0.8",
     author="Stefan Zdravkovic",
     author_email="stefan.zdra@gmail.com",
     description="Generate Lenny Faces",
@@ -23,5 +23,8 @@ setuptools.setup(
         'Programming Language :: Python :: 3.8',
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent"
-    ]
+    ],
+    entry_points = {
+        'console_scripts': ['lennpy=lennpy.command_line:main']
+    }
 )

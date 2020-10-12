@@ -37,12 +37,11 @@ class InvalidEmotion(Exception):
 def emotions():
     return list(lennys.keys())
 
-def get(emotion):
+def get(emotion, randomized=False):
     if emotion not in lennys.keys():
         raise InvalidEmotion(emotion)
-    return lennys[emotion][0]
+    if randomized:
+        return random.choice(lennys[emotion])
+    else:
+        return lennys[emotion][0]
 
-def get_random(emotion):
-    if emotion not in lennys.keys():
-        raise InvalidEmotion(emotion)
-    return random.choice(lennys[emotion])

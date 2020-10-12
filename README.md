@@ -48,9 +48,10 @@ And if it's needed you can also access the available emotions and retrive faces 
 '( ͡° ͜ʖ ͡°)'
 >>> le.get('basic')
 '( ͡° ͜ʖ ͡°)'
->>> le.get_random('basic')
+>>> le.get('basic', randomized=True)
 '(͠≖ ͜ʖ͠≖)'
 ```
 
 
 ┬┴┬┴┤ ͜ʖ ͡°) ├┬┴┬┴
+
